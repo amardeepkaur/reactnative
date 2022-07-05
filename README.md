@@ -1,7 +1,8 @@
 # Notes
 
-#### 1.  Why do we not call a function with {} ? <br>
-    Without parenthesis, you're not calling the function. The name of the function without the parenthesis is a reference to the function. Parentheses is not used in the function at that point because we are not calling the function at the point where the code is encountered, but instead want to pass a reference to the function. If you use login() , the function will get called at that point, we instead want it to be called only after onClick, so we pass a reference to login there.
+#### 1.  Why do we not call a function with {} ? 
+
+Without parenthesis, you're not calling the function. The name of the function without the parenthesis is a reference to the function. Parentheses is not used in the function at that point because we are not calling the function at the point where the code is encountered, but instead want to pass a reference to the function. If you use login() , the function will get called at that point, we instead want it to be called only after onClick, so we pass a reference to login there.
     
 #### 2. Components: Functional and Class
 
