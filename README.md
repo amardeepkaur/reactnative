@@ -12,9 +12,9 @@ Without parenthesis, you're not calling the function. The name of the function w
    return (
     <View>
       <Text> "Hello" </Text>
-      <Button title:"Login" onPress={ ()=> alert("Login pressed") } />
+      <Button title="Login" onPress={ ()=> alert("Login pressed") } />
     </View>
-    )
+    );
  }
 ```
 
@@ -25,10 +25,11 @@ Without parenthesis, you're not calling the function. The name of the function w
       return(
         <View>
           <Text>"Hello"</Text>
-          <Button title:"Login" onPress={ ()=> alert("Login pressed") } />
+          <Button title="Login" onPress={ ()=> alert("Login pressed") } />
         </View>
-       )
+       );
     }
+  }
   ```
   
 #### 3. Props
@@ -36,7 +37,7 @@ Without parenthesis, you're not calling the function. The name of the function w
   
   >App.js
   ```
-  import Home;
+  import Home from './Home.js';
   
   const App = () => {
     const appData = "Data to be displayed"
@@ -44,7 +45,7 @@ Without parenthesis, you're not calling the function. The name of the function w
       <View>
         <Home data = {appData} />
       </View> 
-    )
+    );
   }
   
   export default App;
@@ -57,7 +58,7 @@ Without parenthesis, you're not calling the function. The name of the function w
       <View>
         <Text>{props.data}</Text>
       </View>
-    )
+    );
   }
   
   export default Home;
@@ -88,7 +89,7 @@ Without parenthesis, you're not calling the function. The name of the function w
         <Button 
           title="Update"
           onPress= { ()=>{ 
-            this.test()
+            this.update()
            } }     
         />
       </View>
