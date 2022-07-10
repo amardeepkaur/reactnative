@@ -139,5 +139,120 @@ const styles = StyleSheet.create({
 export default App;
 ```
 
-#### 6. Handle text input
-  
+#### 6. Handle text input using STATE
+  Usage, events(onclick, onChange), get value from textInput, on button click and styling.
+
+```
+import React, { Component } from "react";
+import { View, Button, Text, TextInput } from 'react-native';
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = { name };
+  }
+
+  render() {
+    return(
+      <View>
+        <Text style={{fontSize:30}}>
+          Name: {this.state.name}
+        </Text>
+        <TextInput style={{fontSize:20, color:'gray'}}
+            placeholder={"Enter name"}
+            onChangeText={ (e)=> {
+            this.setState({name: e})
+          } } >
+        </TextInput>
+        <Button 
+          title='Submit'
+          onPress={ ()=> { alert('Name is ' + this.state.name) }}
+        />
+      </View>
+    );
+  }
+}
+
+export default App;
+```
+
+#### 7. Handle form using STATE
+
+```
+import React, { Component } from "react";
+import { View, Button, Text, TextInput, StyleSheet } from "react-native";
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "",
+      password: "",
+      address: ""
+    };
+  }
+  render() {
+    return (
+      <View>
+        <Text style={{ padding: 20, fontSize: 18 }}>
+          Hello {this.state.name}
+        </Text>
+        <TextInput
+          style={[styles.textbox, styles.borders]}
+          placeholder="Enter name"
+          onChangeText={(t) => {
+            this.setState({ name: t });
+          }}
+        ></TextInput>
+        <TextInput
+          style={[styles.textbox, styles.borders]}
+          placeholder="Enter password"
+          secureTextEntry={true}
+          onChangeText={(p) => {
+            this.setState({ password: p });
+          }}
+        ></TextInput>
+        <TextInput
+          style={[styles.textbox, styles.borders]}
+          placeholder="Enter address"
+          onChangeText={(a) => {
+            this.setState({ address: a });
+          }}
+        ></TextInput>
+        <Button
+          title="Submit"
+          onPress={() => {
+            this.submit(this.state);
+          }}
+        />
+      </View>
+    );
+  }
+
+  submit() {
+    alert("Address is " + this.state.address);
+    console.warn("Values are" + this.state.name + ' ' + this.state.password);
+  }
+}
+
+const styles = StyleSheet.create({
+  textbox: {
+    color: "gray"
+  },
+  borders: {
+    borderWidth: 2,
+    borderRadius: 10,
+    borderColor: "skyblue",
+    padding: 10,
+    marginHorizontal: 20,
+    marginVertical: 10
+  }
+});
+
+export default App;
+```
+
+#### 8. FLEX
+
+- Used to control app layout, provides responsive UI by giving flexible height and width
+- 
